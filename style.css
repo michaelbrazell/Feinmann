@@ -646,6 +646,9 @@ body {
 	background-color: #F6F6F6;*/
 }
 
+img.header-logo-30 {
+	max-width: 112px;
+}
 
 .slidedeck-header {
 	height:370px;

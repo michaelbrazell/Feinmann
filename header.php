@@ -63,7 +63,7 @@ if ( is_post_type_archive( 'projects' ) ) {
 	<!-- Slidedeck short code-->
 
 		<hgroup>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="/wp-content/uploads/2016/10/feinmann-logo-2016-resized.png" alt="Feinmann Inc" title="Feinman Inc"></a></h1>
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="/wp-content/uploads/2017/01/Feinmann30th_Logo_Smaller30.jpg" class="header-logo-30" alt="Feinmann Inc" title="Feinman Inc"></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</hgroup>
 
