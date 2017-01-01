@@ -1,0 +1,2855 @@
+/*
+Theme Name: Feinmann
+Theme URI: http://www.worcesterwebgroup.com
+Author: Mike Murray
+Author URI: http://www.worcesterwebgroup.com
+Description: The theme for Feinmann
+Version: 2.0
+Modified: 10/18/2013
+License: None
+Tags:
+This theme is built off of _s (underscores), the starter theme by Automattic,
+the developers of Wordpress.
+
+For more information on _s fork it on Github: https://github.com/automattic/_s
+
+
+
+*/
+
+
+/* =Reset
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+html {
+	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+body {
+	background: #fff;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+table { /* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+a:focus {
+	outline: thin dotted;
+}
+a:hover,
+a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+	outline: 0;
+}
+a img {
+	border: 0;
+}
+
+/* =Font Stack
+----------------------------------------------- */
+
+
+/* =Global
+----------------------------------------------- */
+
+body,
+button,
+input,
+select,
+textarea {
+	color: #404040;
+	font-family: "Lato", Calibri, sans-serif;
+	font-weight: 300;
+	font-size: 18px;
+	font-size: 1.6rem;
+	line-height: 1.5;
+}
+
+/* Headings */
+h1,h2,h3,h4,h5,h6 {
+	font-family: "Lato", Calibri, sans-serif;
+	font-weight: 400;
+	font-size:120%;
+	clear: both;
+}
+
+h2{
+	text-transform: uppercase;
+}
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+/* Text elements */
+p {
+	font-family: "Lato"/* testing google fonts by deactivating fallbacks, Calibri, sans-serif*/;
+	font-weight: 300;
+	margin-bottom: 1.5em;
+	font-size: 105%;
+	color: #444;
+}
+ul, ol {
+	margin: 0 0 1.5em 3em;
+}
+ul {
+	list-style: disc;
+}
+ol {
+	list-style: decimal;
+}
+ul ul, ol ol, ul ol, ol ul {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin: 0 1.5em 1.5em;
+}
+b, strong {
+	font-weight: bold;
+}
+dfn, cite, em, i {
+	font-style: italic;
+}
+blockquote {
+	margin: 0 1.5em;
+}
+address {
+	margin: 0 0 1.5em;
+}
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 1.5rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	padding: 1.6em;
+	overflow: auto;
+	max-width: 100%;
+}
+code, kbd, tt, var {
+	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+small {
+	font-size: 75%;
+}
+big {
+	font-size: 125%;
+}
+.footnote{
+	font-size: 75%;
+	font-weight: 300;
+	text-transform: uppercase;
+	color: #666;
+}
+figure {
+	margin: 0;
+}
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+th {
+	font-weight: bold;
+}
+button,
+input,
+select,
+textarea {
+	font-size: 100%; /* Corrects font size not being inherited in all browsers */
+	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+	*vertical-align: middle; /* Improves appearance and consistency in all browsers */
+}
+button,
+input {
+	line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+	*overflow: visible;  /* Corrects inner spacing displayed oddly in IE6/7 */
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid #ccc;
+	border-color: #ccc #ccc #bbb #ccc;
+	border-radius: 3px;
+	background: #e6e6e6;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 15px 17px rgba(255,255,255,0.5), inset 0 -5px 12px rgba(0,0,0,0.05);
+	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 15px 17px rgba(255,255,255,0.5), inset 0 -5px 12px rgba(0,0,0,0.05);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 15px 17px rgba(255,255,255,0.5), inset 0 -5px 12px rgba(0,0,0,0.05);
+	color: rgba(0,0,0,.8);
+	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+	font-size: 12px;
+	font-size: 1.4rem;
+	line-height: 1;
+	padding: 1.12em 1.5em 1em;
+	text-shadow: 0 1px 0 rgba(255,255,255,.8);
+}
+button:hover,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa #bbb;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), inset 0 15px 17px rgba(255,255,255,0.8), inset 0 -5px 12px rgba(0,0,0,0.02);
+	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), inset 0 15px 17px rgba(255,255,255,0.8), inset 0 -5px 12px rgba(0,0,0,0.02);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), inset 0 15px 17px rgba(255,255,255,0.8), inset 0 -5px 12px rgba(0,0,0,0.02);
+}
+button:focus,
+html input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+html input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	border-color: #aaa #bbb #bbb #bbb;
+	-webkit-box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5), inset 0 2px 5px rgba(0,0,0,0.15);
+	-moz-box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5), inset 0 2px 5px rgba(0,0,0,0.15);
+	box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5), inset 0 2px 5px rgba(0,0,0,0.15);
+}
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
+	padding: 0; /* Addresses excess padding in IE8/9 */
+}
+input[type="search"] {
+	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+	box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+	-webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+	border: 0;
+	padding: 0;
+}
+input[type=text],
+input[type=email],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 0px;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+textarea:focus {
+	color: #111;
+}
+input[type=text],
+input[type=email] {
+	padding: 3px;
+}
+textarea {
+	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+	padding-left: 3px;
+	vertical-align: top; /* Improves readability and alignment in all browsers */
+	width: 98%;
+}
+
+/* Links */
+a {
+	color: royalblue;
+	text-decoration: none;
+}
+a:visited {
+	color: royalblue;
+}
+a:hover,
+a:focus,
+a:active {
+	color: midnightblue;
+}
+
+/* Alignment */
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+
+/* Text meant only for screen readers */
+.assistive-text {
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+
+/* =Menu
+----------------------------------------------- */
+
+.main-navigation {
+	clear: both;
+	display: block;
+	float: left;
+	width: 100%;
+}
+.main-navigation ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+.main-navigation li {
+	float: left;
+	position: relative;
+}
+.main-navigation a {
+	display: block;
+	text-decoration: none;
+}
+.main-navigation ul ul {
+	-moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+	box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+	display: none;
+	float: left;
+	position: absolute;
+		top: 1.5em;
+		left: 0;
+	z-index: 99999;
+}
+.main-navigation ul ul ul {
+	left: 100%;
+	top: 0;
+}
+.main-navigation ul ul a {
+	width: 200px;
+}
+.main-navigation ul ul li {
+}
+.main-navigation li:hover > a {
+}
+.main-navigation ul ul :hover > a {
+}
+.main-navigation ul ul a:hover {
+}
+.main-navigation ul li:hover > ul {
+	display: block;
+}
+.main-navigation li.current_page_item a,
+.main-navigation li.current-menu-item a {
+}
+
+/* Small menu */
+.menu-toggle {
+	cursor: pointer;
+}
+.main-small-navigation .menu {
+	display: none;
+}
+
+
+/* =Content
+----------------------------------------------- */
+
+.sticky {
+}
+/* hentry used to be margin: 0 0 1.5em but I took off the bottom to get the borders to line up right. */
+
+.hentry {
+	margin: 0;
+	/* former for blog page height w/o content: 35em */
+	min-height: 10em;
+}
+.entry-meta {
+	clear: both;
+}
+.byline {
+	display: none;
+}
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+.type-post .entry-content {
+	margin-top: 0;
+}
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+
+/* =Asides
+----------------------------------------------- */
+
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+}
+
+
+/* =Media
+----------------------------------------------- */
+
+.site-header img,
+.entry-content img,
+.comment-content img,
+.widget img {
+	max-width: 100%; /* Fluid images for posts, comments, and widgets */
+	width:100%;
+}
+
+.widget img {
+  width: auto;
+}
+
+.site-header img,
+.entry-content img,
+.comment-content img[height],
+img[class*="align"],
+img[class*="wp-image-"] {
+	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+.site-header img,
+.entry-content img,
+img.size-full {
+	max-width: 100%;
+	width: auto; /* Prevent stretching of full-size images with height and width attributes in IE8 */
+}
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+.wp-caption {
+	border: 1px solid #ccc;
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 1.2% auto 0;
+	max-width: 98%;
+}
+.wp-caption-text {
+	text-align: center;
+}
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+.site-content .gallery {
+	margin-bottom: 1.5em;
+}
+.gallery-caption {
+}
+.site-content .gallery a img {
+	border: none;
+	height: auto;
+	max-width: 90%;
+}
+.site-content .gallery dd {
+	margin: 0;
+}
+.site-content .gallery-columns-4 . {
+}
+.site-content .gallery-columns-4 .gallery-item img {
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+
+/* =Navigation
+----------------------------------------------- */
+
+.site-content .site-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+.site-content .nav-previous {
+	float: left;
+	width: 50%;
+}
+.site-content .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/* =Comments
+----------------------------------------------- */
+
+.bypostauthor {
+}
+
+/* =Widgets
+----------------------------------------------- */
+
+.widget {
+	margin: 0 0 1.5em;
+}
+
+/* Make sure select elements fit in widgets */
+.widget select {
+	max-width: 100%;
+}
+
+/* Search widget */
+#searchsubmit {
+	display: none;
+}
+
+
+/*
+Theme Name: _s
+Layout: Content-Sidebar
+*/
+
+#primary {
+	float: left;
+	margin: 0 -25% 0 0;
+	width: 100%;
+}
+/* not needed.  delete
+ #content {
+	margin: 0 25% 0 0;
+}
+*/
+#secondary { /* Sidebar 1 */
+	float: right;
+	overflow: hidden;
+	width: 25%;
+}
+#tertiary { /* Sidebar 2 */
+	clear: right;
+}
+.site-footer {
+	clear: both;
+	width: 100%;
+}
+
+/*
+Theme Name: _s
+Layout: Content-Sidebar
+*/
+
+#primary-project {
+	float: left;
+	margin: 0 -35% 0 0;
+	width: 100%;
+}
+
+#secondary-project { /* Sidebar 1 */
+	float: right;
+	overflow: hidden;
+	width: 35%;
+}
+
+/**********************
+* Feinmann Style Begins
+***********************/
+
+/* Site Frame */
+
+body {
+	margin: 0 auto;
+	max-width: 1140px;
+	background-color: #F1F1F1;
+	/* Modified 11-4-2014
+	background-color: #F6F6F6;*/
+}
+
+
+.slidedeck-header {
+	height:370px;
+	position:relative;
+}
+
+.home-header .slidedeck-header {
+	height:600px;
+}
+
+.project-header {
+	height: 60px;
+	position: relative;
+}
+
+.site-title {
+	display: block;
+	position: absolute;
+	left: 1.5em;
+	top: 1.5em;
+	height:100px;
+	z-index:10;
+}
+
+.project-header .site-title {
+	left: 2em;
+	top: 10px;
+}
+
+.site-title a {
+	visility: hidden;
+}
+
+.call-to-action {
+	display: block;
+    position: absolute;
+    height: 80px;
+    background: #999999;
+    top: 290px;
+    z-index: 100;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.home-header .call-to-action {
+	height: 100px;
+    background: #999999;
+    top: 500px;
+    opacity: 1.0;
+}
+
+.cta-container {
+	display:block;
+	position:relative;
+	top:14%;
+}
+
+.home-header .cta-container {
+	top:21%;
+}
+
+
+.cta-text {
+	display:inline;
+	text-shadow: #444 1px 1px 1px;
+	color: #FFF;
+	font-family: "Lato", san-serif;
+	font-weight: 300;
+	font-size: 40px;
+	text-decoration: none;
+	vertical-align:middle;
+	margin:0 .75em 0 .75em;
+}
+
+.home-header .cta-text {
+
+}
+
+
+.cta-button {
+   border: 1px solid #0c3769;
+   background: #999999;
+   opacity:0.9;
+   padding: 13px 26px;
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
+   -webkit-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
+   -moz-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
+   box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
+   text-shadow: #444 1px 1px 1px;
+   color: #ffffff;
+   font-family: "Lato", san-serif; font-size: 26px; color: #FFF;  letter-spacing: .06em; font-weight: 300;
+   text-decoration: none;
+   text-transform: uppercase;
+   vertical-align: middle;
+   display:inline;
+}
+.cta-button:hover {
+   border: 1px solid #0c3769;
+   text-shadow: #2d363b 0 1px 0;
+   background: #00428d;
+   color: #fff;
+   /*
+   background: #e6e6e6;
+   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e6e6e6));
+   background: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+   background: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+   background: -ms-linear-gradient(top, #ffffff, #e6e6e6);
+   background: -o-linear-gradient(top, #ffffff, #e6e6e6);
+   background-image: -ms-linear-gradient(top, #ffffff 0%, #e6e6e6 100%);
+   color: #0c3769;
+   */
+   cursor: pointer;
+   }
+.cta-button:active {
+   text-shadow: #1e4158 0 1px 0;
+   border: 1px solid #0a3c59;
+   background: #00428d;
+   background: -webkit-gradient(linear, left top, left bottom, from(#00428d), to(#e6e6e6));
+   background: -webkit-linear-gradient(top, #00428d, #65a9d7);
+   background: -moz-linear-gradient(top, #00428d, #65a9d7);
+   background: -ms-linear-gradient(top, #00428d, #65a9d7);
+   background: -o-linear-gradient(top, #00428d, #65a9d7);
+   background-image: -ms-linear-gradient(top, #00428d 0%, #65a9d7 100%);
+   color: #fff;
+   }
+.cta-link {
+	text-decoration: none;
+}
+
+
+.sidebar-button, .pods-pagination-paginate .prev, .pods-pagination-paginate .next, #gform_submit_button_1, #gform_submit_button_2 {
+   border: 1px solid #747474;
+   background: #747474;
+   opacity:0.9;
+   padding: 6px 13px;
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
+   -webkit-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
+   -moz-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
+   box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
+   color: #ffffff;
+   font-size: 90%;
+   font-family: "Lato", Calibri, sans-serif, serif;
+   font-weight: 300;
+   text-decoration: none;
+   text-transform: uppercase;
+   vertical-align: middle;
+   display:inline;
+   }
+.sidebar-button:hover, .sidebar-button:focus, .pods-pagination-paginate .prev:hover, .pods-pagination-paginate .next:hover, #gform_submit_button_1:hover, #gform_submit_button_2:hover {
+   border: 1px solid #002f65;
+   text-shadow: #2d363b 0 1px 0;
+   background: #002f65;
+   color: #fff;
+   cursor: pointer;
+   }
+.sidebar-button:active, .pods-pagination-paginate .prev:active, .pods-pagination-paginate .next:hover, #gform_submit_button_1:active, #gform_submit_button_2:active {
+   text-shadow: #1e4158 0 1px 0;
+   border: 1px solid #002f65;
+   background: #002f65;
+   color: #fff;
+}
+
+
+.sidebar-button a, .sidebar-button a:hover {
+	text-decoration:none !important;
+	color:#fff !important;
+	font-weight:300 !important;
+}
+
+
+/* Custom SlideDeck Theming to Match CTA */
+
+.sd2-node-caption {
+	display: block;
+    position: absolute;
+    height: 80px;
+    background: #999999;
+    top: 290px;
+    z-index: 100;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.sd2-vertical-center-outer {
+	display: block;
+	position: relative;
+	top: 14%;
+}
+
+.sd2-slide-text  p {
+	display: inline;
+	text-shadow: #000 1px 1px 1px;
+	color: #FFF;
+	font-family: "Lato", san-serif;
+	font-weight: 300;
+	font-size: 40px;
+	text-decoration: none;
+	vertical-align: middle;
+	margin: 0 1em 0 1em;
+}
+
+/* End custom slidedeck to match CTA */
+
+.site {
+	margin: 0 auto;
+	height: inherit;
+	/* Removed 11-4-2014, PF
+	box-shadow: .0em .1em .4em #ccc; */
+	background: #fff;
+}
+
+.site-content {
+	border-right: solid 1px #d6d6d6;
+	max-width: 75%;
+}
+
+body.home .site-content {
+	max-width: 100%;
+	border-right: none;
+}
+
+.site-content-project {
+	border: 0;
+	max-width: 65%;
+}
+
+.main-navigation {
+	border-bottom: solid 1px #d6d6d6;
+}
+
+.main-navigation ul {
+	margin: 0 1.5em;
+
+}
+
+.main-navigation a {
+	text-transform: uppercase;
+	font-weight: 300;
+	color: #999;
+}
+
+.main-navigation a:hover {
+	font-family:'Lato', san-serif;
+	font-weight: 300;
+	color: #666;
+	background: url('/wp-content/uploads/2013/04/nav-arrow-edit.png') no-repeat 50% 100%;
+	padding-bottom: 10px;
+	margin-bottom:-5px;
+}
+
+.main-navigation li.current-menu-item a, .main-navigation li.current-page-ancestor a {
+	font-family:'Lato', san-serif;
+	font-weight: 400;
+	color: #666;
+	background: url('/wp-content/uploads/2013/04/nav-arrow-edit.png') no-repeat 50% 100%;
+	padding-bottom: 10px;
+	margin-bottom:-5px;
+}
+
+
+/* Disable sub nav on main navigation */
+
+.main-navigation .sub-menu {
+	display:none !important;
+}
+
+.menu-item {
+	margin: .5em .5em 0 .5em;
+	padding: 4px 0;
+}
+
+.breadcrumbs {
+	display:none;
+	color:#747474;
+	text-transform:uppercase;
+	font-size: 80%;
+	margin-left: 2.5em !important;
+	margin-top: .75em !important;
+}
+
+
+.breadcrumbs a {
+	color:#747474;
+}
+
+.type-page, .type-post, .type-projects {
+	padding: 1.5em 0 0;
+	margin: 0 2em;
+}
+
+body.home .type-page {
+	margin: 0;
+}
+
+.page {
+	min-height: 570px;
+}
+
+.homepage-image {
+	padding: 1em 1em 0 0;
+}
+
+.site-footer {
+	border-top: solid 1px #d6d6d6;
+	height:100%;
+}
+
+.footer-top, .footer-bottom {
+	clear: both;
+}
+
+.footer-top {
+	margin: 1.5em;
+}
+
+.footer-bottom {
+	padding: .5em 1.5em;
+	background-color: #f6f6f6;
+}
+
+.footer-top-left, .footer-top-right {
+	width: 46%;
+	float: left;
+}
+
+.footer-top-left {
+	margin-right: 10px;
+}
+
+.footer-top-right {
+	margin-left: 10px;
+	padding-left: 20px;
+	border-left: 1px solid #d6d6d6;
+}
+
+.footer-top h3 {
+	margin-bottom: 15px;
+}
+
+.clearfix:after {
+   content: " ";
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+.site-info {
+
+}
+
+.footer-bottom span.footer-social-icons {
+	text-align: right;
+}
+
+ul.social-icons-list {
+	list-style: none;
+}
+
+ul.social-icons-list li {
+	display: inline;
+	padding: 0 15px;
+}
+
+ul.social-icons-list li img {
+
+}
+
+.lead-in-text {
+	color: #444 !important;
+	font-size: 160%;
+	font-style: italic;
+	font-weight: 300;
+}
+/*
+.large {
+	font-weight: 300;
+}*/
+
+h1.archive-title {
+	display:none;
+}
+
+
+.topic-content {
+	margin: 0 2em;
+	padding: 1.5em 0 0;
+}
+
+.cat-links, .tags-links, .social-links {
+	font-size: 90%;
+}
+
+.more-link {
+	text-decoration: none;
+}
+
+/* Blog / Page Styles */
+
+#content h2{
+	padding-bottom: 2px;
+}
+
+#content h3{
+	font-weight: 300;
+	color:#00428d;
+}
+
+#content h3{
+	font-weight: 300;
+	color:#00428d;
+	padding-bottom: 0;
+}
+
+#content h4{
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: 300;
+	color: #999;
+	padding: 0;
+	margin: 0;
+
+	display: block;x
+}
+
+
+.entry-content li{
+	list-style: circle !important;
+	margin-left: 5px;
+	font-weight: 300;
+}
+
+
+.entry-title, .entry-title a {
+	font-family:"Lato", san-serif;
+	font-weight: 400;
+	color: #00428d;
+	text-decoration: none;
+	font-size: 130%;
+}
+
+.entry-meta, .entry-meta a {
+	font-weight: 300;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 90%;
+}
+
+.entry-date {
+	font-weight: 300;
+	color: #666;
+}
+
+
+.comments-area {
+	margin: 2em;
+}
+
+/* Forms */
+
+.gfield_label {
+	font-weight: 300 !important;
+	text-transform: uppercase;
+	color: #00428d !important;
+}
+
+h3.gform_title {
+	font-weight: 400 !important;
+	text-transform:uppercase;
+	color: #333 !important;
+}
+
+.gform_body input, .gform_body textarea {
+	background:#f6f6f6;
+	font-size:100% !important;
+	padding-left:5px !important;
+}
+
+.gform_widget {
+	padding: 1.5em 2em;
+}
+
+#input_2_1, #input_2_2, #input_2_3 {
+	width:85%;
+	background: #fff;
+
+}
+
+
+/* Widget Area / Sidebar */
+
+
+.widget {
+	border-bottom: solid 1px #d6d6d6;
+}
+
+.widget-title {
+	font-weight:300;
+	text-transform:uppercase;
+	color:#00428d;
+}
+
+.widget-area p {
+	margin-bottom: 1em;
+}
+
+.contact-title {
+	text-transform: uppercase;
+	font-size: 90%;
+	color: #00428d;
+}
+
+.widget_text .widget-title, .widget_text .textwidget, .menu-about-navigation-container, .menu-article-navigation-container,  .widget_search, .menu-gallery-navigation-container, .menu-news-navigation-container, .menu-blog-navigation-container {
+	margin: 1.5em 2em;
+}
+
+.widget_text {
+	margin-top: 1em;
+	margin-botto: 1em;
+}
+
+.widget_search {
+	border-bottom: 0;
+}
+
+.social-icons {
+	margin: 0 .5 0 0;
+	width:32px;
+	height:32px;
+}
+
+.widget_nav_menu ul, .widget_nav_menu a {
+	list-style: none;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: 300;
+	color: #999;
+	margin: 0 0 1.5em 0;
+}
+
+.widget_nav_menu a:hover {
+	font-family:"Lato", san-serif;
+	color: #666;
+	font-weight: 300;
+}
+
+ .widget_nav_menu li.current-menu-item a {
+	font-family:"Lato", san-serif;
+	font-weight: 400;
+	color: #666;
+}
+
+
+.widget_nav_menu .menu-item {
+	margin-left: 0;
+}
+
+
+
+/* List of Affiliations to appear globally */
+
+.affiliations-bar {
+	clear:both;
+	width:100%;
+	border-top: solid 1px #d6d6d6;
+	background-color:#f6f6f6;
+}
+
+.affiliations-list {
+	list-style: none;
+	margin: 0;
+}
+
+.affiliations-list li {
+	display:inline-block;
+	width:16%;
+	margin:.5em 0;
+	text-align: center;
+	vertical-align: middle;
+}
+
+/* Begin Gallery Style */
+
+.project-gallery {
+	min-height: 1135px;
+	margin-left: -1.5em;
+	}
+
+.gallery-item {
+	width: 29.75%;
+	position: relative;
+    margin:  0 0 1.5em 1.5em;
+    padding: 0 !important;
+	float:left;
+}
+
+.body-left{
+	margin-left: -1.5em;
+}
+
+.gallery-item-homepage {
+	position: relative;
+	width: 30%;
+    margin:  0 0 1.5em 1.5em;
+	float:left;
+}
+
+.gallery-item .container {
+	height: 154px;
+	overflow: hidden;
+}
+
+/* Gallery Hover */
+.gallery-item:hover .container {
+	background: #fff;
+}
+
+
+.gallery-item-title {
+    display: none;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top:0;
+    text-align: left;
+    z-index: 99;
+    text-shadow: #000 1px 1px 1px;
+    color: #ffffff;
+    font-size: 100%;
+    font-weight: 300;
+    padding: 10px;
+	background: rgba(204, 204, 204, .8);
+
+}
+
+span.gallery-item-title {
+   padding: 10px;}
+
+
+.overlay {
+
+/*
+	height: 100%;
+	width: 100%;
+	background: #666;
+	color: #000;
+	display: none;
+	position: absolute;
+	top: 0em;
+	opacity: 0.6;*/
+}
+
+.container:hover .gallery-item-title {
+    display:block;
+}
+.container:hover .overlay {
+	display:block;
+}
+
+.gallery-item img {
+	max-width:100%;
+}
+
+/*  $FooBox $lightbox Styles */
+
+.fbx-metro .fbx-inner { border-bottom-width: 60px; border-right-width: 40px; border-left-width: 40px; }
+.fbx-entry-title { position: absolute; top: -36px; left: 90px; font-family: "lato"; font-size: 18px; color: #999; }
+.fbx-caption { bottom: -52px; text-align: left; background-color: #fff; font-size: 18px; font-family: "lato"; }
+.fbx-light .fbx-caption { color: #00428d; background-color: #fff ;}
+.fbx-caption-title { float: left; font-size: inherit; padding-left: 0;}
+.fbx-modal .sidebar-button { font-size: 14px; font-family: "lato"; float: left; margin-top: 11px; -webkit-overflow-scrolling: touch;}
+
+/* Moficiations to make Title and Caption disappear on blog & news pages */
+.blog .fbx-caption-title, .blog .fbx-entry-title, .blog .fbx-modal .sidebar-button, .news .fbx-caption-title, .news .fbx-entry-title, .news .fbx-modal .sidebar-button, .single-projects .fbx-caption-title, .single-projects .fbx-entry-title, .single-projects .fbx-modal .sidebar-button { display:none; }
+
+
+/* End $FooBox */
+
+
+.pods-pagination-paginate, .pods-pagination-advanced {
+	display: block;
+	width: 100%;
+	float: left;
+	margin: 0 0 2em 0;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.pods-pagination-paginate .prev {
+	float:left;
+}
+
+.pods-pagination-paginate .next {
+	float:right;
+}
+
+.pods-pagination-paginate .page-numbers {
+	margin: 0 .5em;
+}
+
+#project-listing-grid .page-header {
+	margin-bottom:1em;
+}
+
+.gallery-widget-title {
+	margin-bottom: 1em;
+
+}
+
+#menu-item-795{
+	padding: 0 0 20px 0;
+	margin: 0;
+}
+
+#menu-item-794{
+	padding: 0;
+	margin: 0;
+}
+
+
+#menu-item-795 ul, #menu-item-794 ul{
+	padding: 0 0 0 8px;
+	margin: 0;
+
+}
+
+#menu-item-795 li, #menu-item-794 li{
+	padding: 2px 0 2px 0 ;
+	margin: 0;
+	font-size: 100%;
+}
+
+#all-projects-toggle {
+	cursor: pointer;
+	background-position: left center;
+	background-repeat: no-repeat;
+}
+
+#spaces-menu-head, #styles-menu-head {
+	cursor: pointer;
+	background-position: left center;
+	background-repeat: no-repeat;
+	color: #747474;
+	font-size: 100%;
+}
+
+.sidebar-sub-menu {
+	padding-left:1em;
+}
+
+li.sidebar-sub-menu {
+	padding-bottom: 0;
+
+}
+
+li.submenu-filter-project {
+	font-weight: 400;
+	color: #999;
+	font-size: 100%;
+}
+
+.submenu-filter-project:hover {
+	font-weight: 400;
+	color: #666;
+	cursor: pointer;
+}
+
+.submenu-filter-project-1:hover {
+	font-weight: 300;
+	color: #666;
+	cursor: pointer;
+}
+
+/* Removing this functionality per request
+
+#spaces-menu, #styles-menu {
+	display:none;
+}
+
+*/
+
+/* Individual Project detail pages */
+
+.hide-desktop{
+	visibility: hidden;
+	display: none;
+}
+
+
+.project-view-menu {
+
+	display:block;
+	position: absolute;
+	margin: 1.2em 7em;
+}
+
+.project-view-menu-item {
+	color: #999;
+	text-transform: uppercase;
+	font-weight: 300 ;
+	margin: 0 2em 0 0;
+}
+
+.project-view-menu-title{
+	font-weight:300;
+	color:#00428d;
+	font-size: 105%;
+	text-transform: none;
+	letter-spacing: .075em
+}
+
+.project-view-menu-text{
+	font-weight:300;
+	color:#00428d;
+	font-size: 105%;
+	text-transform: none;
+	letter-spacing: .075
+}
+
+
+.project-view-menu-item a, .project-view-menu-item a:visited {
+	text-decoration:none;
+	color: #666;
+	font-weight: 300;
+}
+
+#mobile-filter {
+	display:none;
+}
+
+.project-header .align-right {
+	position:absolute;
+	top:5px;
+	right:5%;
+	width:150px;
+}
+
+.project-view-menu-item .menu-icon {
+	position:absolute;
+	margin:1px 5px;
+}
+
+.project-carousel {
+	width:100%;
+	height:130px;
+	background:#f6f6f6;
+	border-top: solid 1px #d6d6d6;
+	border-bottom: solid 1px #d6d6d6;
+}
+
+.project-carousel-interior {
+	width:90%;
+	margin: 0 auto;
+}
+
+.jcarousel-item {
+	position:relative;
+	cursor: pointer;
+	/*line-height:83px;
+	height:83px;*/
+
+}
+
+.carousel-item-interior {
+	/*display:table-cell;
+	vertical-align: top !important;*/
+}
+
+.carousel-item-title {
+	display: none;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top:0 !important;
+    vertical-align: top !important;
+    text-align: left;
+    z-index: 99;
+    text-shadow: #000 1px 1px 1px;
+    color: #ffffff;
+    font-size: 90%;
+    font-weight: 300;
+    padding: 5px;
+	background: rgba(204, 204, 204, .8);
+}
+
+.edit-link {
+	display:block;
+	width:100%;
+	float:left;
+	padding: 1em 0;
+}
+
+.jcarousel-item:hover .overlay, .jcarousel-item:hover .carousel-item-title {
+	display:block;
+	/*display:inline-block;
+	vertical-align: middle;*/
+}
+
+.taxonomy-title {
+	color:#999;
+	font-weight:400;
+}
+
+
+
+.project-content {
+	margin: 0;
+}
+
+.project-sidebar {
+	margin: 1.5em 0;
+}
+
+.project-sidebar aside {
+	display:block;
+	margin: 1em 2em 2em 0;
+}
+
+.project-awards p, .project-awards ul {
+	margin:0 1.5em;
+	font-weight: 300;
+}
+
+.project-content-bg {
+	background:#f6f6f6;
+	margin-top:1.5em;
+}
+.project-content-interior {
+	padding:2em;
+}
+
+.gallery-image{
+	width:70px;
+	height:54px;
+	float:left;
+	margin:5px;
+}
+
+.centered-image {
+	text-align: center;
+}
+
+#cycle-pager {
+	list-style: none;
+	margin: 0;
+}
+
+#cycle-pager li {
+	display: inline;
+	float: left;
+	margin: 5px;
+}
+
+.slideshow {
+	position: relative;
+	text-align:center;
+}
+
+#prevnext {
+	display: none;
+	position: absolute;
+	z-index: 1000;
+	width: 100%;
+	top: 50%;
+}
+
+.slideshow:hover #prevnext {
+	display:block;
+}
+
+#prevnext #prev {
+	float:left;
+	margin-left: 1em;
+}
+
+#prevnext #next {
+	float:right;
+	margin-right: 1em;
+}
+
+#thumbs img, #largeImage {
+ cursor: pointer;
+}
+
+#spaces-menu-head-project, #styles-menu-head-project {
+	cursor: pointer;
+	background-image: url('/wp-content/themes/feinmann/images/menu-arrow.png');
+	background-position: right center;
+	background-repeat: no-repeat;
+	text-transform: uppercase;
+	font-weight: 300;
+	padding-right: 2em;
+	margin: 0 2em 0 0;
+	color: #999;
+}
+
+#mobile-filter {
+	cursor: pointer;
+	background-image: url('/wp-content/themes/feinmann/images/menu-arrow.png');
+	background-position: right center;
+	background-repeat: no-repeat;
+	text-transform: uppercase;
+	font-weight: 300;
+	padding-right: 2em;
+	margin: 0 3em 0 0;
+}
+
+#spaces-menu-project, #styles-menu-project {
+	display:none;
+	background:rgba(255,255,255,0.8);
+	list-style-type: none;
+	z-index:9999;
+	position:absolute;
+	top:100%;
+	left:40%;
+	width:20%;
+	padding:5px;
+	border: solid 1px #d6d6d6;
+}
+
+
+#styles-menu-project {
+	left:62%;
+	width:27%;
+}
+
+#mobile-filter-menu {
+	display:none;
+	background:rgba(255,255,255,0.8);
+	list-style-type: none;
+	z-index:9999;
+	position:absolute;
+	top:100%;
+	left:0;
+	width:100px;
+	padding:5px;
+	border: solid 1px #d6d6d6;
+}
+
+
+#spaces-menu-project li, #styles-menu-project li, #mobile-filter-menu li {
+	text-transform: uppercase;
+	font-weight:300;
+}
+
+#spaces-menu-project li a, #styles-menu-project li a, #mobile-filter-menu li a {
+	color:#666;
+}
+#spaces-menu-project li a:hover, #styles-menu-project li a:hover, #mobile-filter-menu li a:hover {
+	font-family:'Lato';
+	font-weight:400;
+}
+
+#text-3 {
+	display:none;
+}
+
+#nav_menu-5 {
+	display: none;
+}
+
+.page-template-subgallery-page-php .entry-title {
+	color: #747474;
+	font-weight:300;
+	font-size: 20px;
+}
+
+/* In the Carousel, some project titles need to be top adjusted because they are too long. You can
+Target these with their span class names which is the project slug. Any that are 3 lines take 10% */
+
+.food-professional-relishes-new-kitchen, .work-and-play-space-for-a-belmont-home {
+	top:10%;
+}
+
+/* End Carousel Top Adjustment */
+
+/***** Component: Contact Us Widget ******/
+.pulldown-widget {
+  position: absolute;
+  z-index: 110;
+	top: -475px;
+  right: 150px;
+  width: 275px;
+  transition: top 1.5s;
+}
+
+.pulldown-widget h1.widget-title {
+	margin-bottom: 10px;
+}
+
+.pulldown-widget.open {
+  top: 0 !important;
+}
+
+.contact-widget {
+  background: #fff;
+	border: solid 1px #d6d6d6;
+  padding: 10px;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+}
+
+.contact-widget p {
+	margin-bottom: 0.8em;
+}
+
+.contact-widget p:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.contact-widget p:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.pulldown-trigger {
+  background: #002f65;
+  border: 1px solid #002f65;
+  border-top: 0;
+  /*border-radius: 0 0 15px 15px;*/
+  width: 140px;
+  float: right;
+	color: #fff;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+}
+
+.pulldown-trigger:hover {
+	background: #747474;
+	border: 1px solid #747474;
+	border-top: 0;
+	cursor: pointer;
+}
+
+.pulldown-trigger p.trigger {
+  text-align: center;
+	margin: 10px;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 16px;
+	padding-right: 20px;
+}
+
+.pulldown-trigger p.trigger:after {
+	font-family: 'ETmodules';
+	content: "\37";
+	position: absolute;
+	margin-right: -18px;
+	padding-left: 5px;
+}
+
+.pulldown-widget.open .pulldown-trigger {
+	background: #747474;
+	border: 1px solid #747474;
+	border-top: 0;
+}
+
+.pulldown-widget.open p.trigger:after {
+	content: "\36";
+}
+
+
+/* Hacks */
+
+/* Have blog news only show up on blog page */
+
+#nav_menu-7 {
+	display:none;
+}
+
+#nav_menu-6 {
+	display:none;
+}
+
+#gform_widget-2 {
+	display:none;
+}
+
+/* Hacks to disable pagination on the mobile gallery summary page
+	Also to prevent pointer events on the mobile gallery
+*/
+
+.page-id-1407 .ngg-navigation {
+	display:none !important;
+}
+
+.page-id-1407 .gallery-item a {
+	pointer-events: none;
+}
+
+.page-id-1407 .container:hover .overlay {
+	display: none;
+}
+
+/* Display Blog Nav on Blog SubNav pages */
+
+.category-blog #nav_menu-7, .category-our-projects #nav_menu-7, .category-design-and-build #nav_menu-7, .category-home-improvement #nav_menu-7, .category-feinmann-team #nav_menu-7, .category-community #nav_menu-7, .category-lifestyle #nav_menu-7, .category-blog #gform_widget-2 {
+	display:block;
+}
+
+.blog #nav_menu-7, .our-projects #nav_menu-7, .design-and-build #nav_menu-7, .home-improvement #nav_menu-7, .feinmann-team #nav_menu-7, community #nav_menu-7, .lifestyle #nav_menu-7, .blog #gform_widget-2 {
+	display:block;
+}
+
+.category-news #nav_menu-6, .category-press #nav_menu-6, .category-awards #nav_menu-6, .category-events #nav_menu-6, .category-news #gform_widget-2 {
+	display:block;
+}
+
+.news #nav_menu-6, .press #nav_menu-6, .awards #nav_menu-6, .events #nav_menu-6, .news #gform_widget-2 {
+	display:block;
+}
+
+/* Link the widget title */
+
+#text-2 .widget-title a {
+	color: #00428d;
+}
+
+/* Set the min-height of the Sub Galleries because sidebar is too long */
+.page-template-subgallery-page-php .entry-content {
+	min-height: 65em;
+}
+
+/* Slidedeck Lens Hacks, this has to be applied to the lens.css to remove background */
+
+.default-nav-styles a.deck-navigation.vertical, .default-nav-styles a.deck-navigation.horizontal, .default-nav-styles a.deck-navigation.horizontal:hover  {
+	background:none;
+}
+
+/* Forces blog subpages & individual items to highlight navigation correctly on subpages */
+
+.category-our-projects #menu-item-65 a, .our-projects #menu-item-65 a, .category-design-and-build #menu-item-65 a, .design-and-build #menu-item-65 a, .category-home-improvement #menu-item-65 a, .home-improvement #menu-item-65 a, .category-feinmann-team #menu-item-65 a, .feinmann-team #menu-item-65 a, .category-community #menu-item-65 a, .community #menu-item-65 a, .category-lifestyle #menu-item-65 a, .lifestyle #menu-item-65 a {
+	font-family:'Lato';
+	font-weight:400;
+	background: url('/wp-content/uploads/2013/04/nav-arrow-edit.png') no-repeat 50% 100%;
+	padding-bottom: 10px;
+	margin-bottom:-5px;
+	color:#666;
+}
+
+/* Forces news subpages & individual items to highlight navigation correctly on subpages */
+
+.category-press #menu-item-66 a, .press #menu-item-66 a, .category-awards #menu-item-66 a, .awards #menu-item-66 a, .category-events #menu-item-66 a, .events #menu-item-66 a {
+	font-family:'Lato';
+	font-weight:400;
+	background: url('/wp-content/uploads/2013/04/nav-arrow-edit.png') no-repeat 50% 100%;
+	padding-bottom: 10px;
+	margin-bottom:-5px;
+	color:#666;
+}
+
+/* Forces gallery subpages to highlight navigation correctly when on gallery sub pages */
+
+body.pod-page-projects .menu-item-182 a, body.tax-style .menu-item-182 a, body.tax-space .menu-item-182 a, body.page-template-subgallery-page-php .menu-item-182 a {
+	font-family:'Lato';
+	font-weight:400;
+	background: url('/wp-content/uploads/2013/04/nav-arrow-edit.png') no-repeat 50% 100%;
+	padding-bottom: 10px;
+	margin-bottom:-5px;
+	color:#666;
+}
+
+.padding-hack {
+	padding-top:1em;
+}
+
+.page-id-1311 .menu-item-787 a, .page-id-1313 .menu-item-785 a, .page-id-1315 .menu-item-788 a, .page-id-1317 .menu-item-790 a, .page-id-1319 .menu-item-786 a, .page-id-1494 .menu-item-793 a, .page-id-1498 .menu-item-792 a, .page-id-1502 .menu-item-791 a, .pod-page-projects .menu-item-all-projects a, .page-id-1551 .menu-item-awards a  {
+	color:#666;
+}
+
+
+
+/* Forces Gallery page widgets to be hidden */
+
+.pod-page-projects #search-2, .pod-page-projects #nav_menu-3 {
+	display:none;
+}
+
+/* Divi Overrides */
+.page-id-55.et_divi_builder #et_builder_outer_content .et_pb_with_background .et_pb_row {
+	width: 90% !important;
+}
+
+.page-id-55 .et_pb_section_0 .et_pb_row_1 {
+	padding-bottom: 0 !important;
+}
+
+.page-id-55 .et_pb_section_0 {
+	padding-top: 0 !important;
+}
+
+.page-id-55 .et_pb_section_1 .et_pb_row_3, .page-id-55 .et_pb_section_2 .et_pb_row_5 {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+/* Hacks so that the info@feinmann button displays correctly in smaller views */
+@media only screen and (max-width : 1024px){
+.sidebar-button {
+		font-size:80%;
+}
+
+.gallery-item-homepage {
+	width: 29.5%;
+}
+
+/* Hack to prevent hover on mobile devices */
+
+.container:hover .gallery-item-title {
+    display:none;
+}
+.container:hover .overlay {
+	display:none;
+}
+
+.jcarousel-item:hover .overlay, .jcarousel-item:hover .carousel-item-title {
+	display:none;
+}
+
+
+}
+
+@media only screen and (max-width : 768px){
+	.sidebar-button {
+			font-size:80%;
+			padding: 6px 8px;
+	}
+}
+
+/* Hacks for the CTA to not break */
+@media only screen
+and (max-width: 1000px) {
+	.cta-text {
+		font-size:36px;
+}
+
+.cta-button {
+	position:relative;
+	top:3px;
+	font-size:24px;
+}
+
+
+
+
+}
+
+@media only screen
+and (max-width: 945px) {
+
+.gallery-item {
+	width: 45.5%;
+}
+
+.gallery-item .container {
+	height: 100%;
+}
+
+.overlay {
+	height: 98%;
+}
+
+.sidebar-button {
+		font-size:75%;
+		padding: 5px 7px;
+}
+
+}
+
+
+@media only screen
+and (max-width: 890px) {
+
+.cta-text {
+	font-size:34px;
+}
+
+.cta-button {
+	font-size:22px;
+}
+
+.gallery-item-homepage {
+	width: 28.75%;
+}
+
+
+.project-view-menu-item {
+	margin-right: 2em;
+}
+
+
+
+}
+
+@media only screen
+and (max-width: 840px) {
+
+.cta-text {
+	position:relative;
+	top:5px;
+	font-size:32px;
+}
+
+.cta-button {
+	font-size:20px;
+}
+
+.project-view-menu {
+	display:block;
+	position: absolute;
+	margin: 1.2em 6.5em;
+}
+
+.project-view-menu-item {
+	margin-right: 2em;
+}
+
+
+
+
+
+}
+
+@media only screen
+and (max-width: 800px) {
+
+
+
+.cta-text {
+	font-size:30px;
+	top:0px;
+	margin:0 .95em 0 .95em;
+}
+
+.cta-button {
+	top:0px;
+	font-size:18px;
+}
+
+
+
+.project-view-menu-item {
+	margin-right: 1.8em;
+}
+
+#spaces-menu-head-project, #styles-menu-head-project {
+	margin-right:1.8em;
+}
+
+.sidebar-button {
+		font-size:70%;
+		padding: 5px 7px;
+}
+
+
+}
+
+
+@media only screen
+and (max-width: 768px) {
+
+
+.project-view-menu-item {
+	margin-right: 1.8em;
+}
+
+.cta-container {
+	top: 20%;
+}
+
+.home-header .cta-container {
+	top: 25%;
+}
+
+/* Set equidistant widths on iPad right column */
+
+.widget_text .widget-title, .widget_text .textwidget, .menu-about-navigation-container, .menu-article-navigation-container,  .widget_search, .menu-gallery-navigation-container, .widget_nav_menu, .menu-news-navigation-container, .menu-blog-navigation-container, .gform_widget-2 {
+	margin: 1.5em 1em;
+}
+
+/* On an iPad view, show mobile filter & do not show the other project view items */
+
+#mobile-filter {
+	display:inline;
+}
+
+#spaces-menu-head-project, #styles-menu-head-project {
+	margin-right:1.8em;
+}
+
+.open-project-view {
+	display:none;
+}
+
+.gallery-item .container {
+	height:100%;
+}
+
+.project-carousel-interior {
+	width:76%;
+}
+
+/* Fix for iPad Portrait */
+
+.pod-page-projects .gallery-item .container {
+	height:183px;
+}
+
+.overlay {
+	height:100%;
+}
+
+
+.affiliations-list li {
+	width: 15%;
+}
+
+.builders-association-of-greater-boston {
+	position:relative;
+	left:9px;
+}
+
+/* Hack to prevent hover on mobile devices */
+
+.container:hover .gallery-item-title {
+    display:none;
+}
+.container:hover .overlay {
+	display:none;
+}
+
+.jcarousel-item:hover .overlay, .jcarousel-item:hover .carousel-item-title {
+	display:none;
+}
+
+/* Fixing iOS double-tap button issue, bug fix 6/10/14 */
+.sidebar-button:hover, .sidebar-button:active {
+
+}
+
+
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (max-width : 767px) {
+
+.pulldown-widget {
+	display: none;
+}
+
+#primary {
+	max-width:100%;
+	width:100%;
+	margin:0;
+
+}
+
+#secondary {
+	float:left;
+	width:100%;
+	background:#f6f6f6;
+	border-top: solid 1px #ccc;
+	padding-top: 1em;
+
+}
+
+#primary-project {
+	float: left;
+	margin: 0;
+	width: 100%;
+}
+
+#secondary-project {
+	float: left;
+	overflow: hidden;
+	width: 100%;
+	margin: 2em;
+}
+
+#content {
+	width:100%;
+}
+
+aside {
+	padding: 0 2em;
+}
+
+#text-3 {
+	display:block;
+	border-bottom: none;
+}
+
+.main-navigation a:hover, .main-navigation li.current-menu-item a, .main-navigation li.current-page-ancestor a, body.pod-page-projects .menu-item-182 a, body.tax-style .menu-item-182 a, body.tax-space .menu-item-182 a {
+	background:none;
+}
+
+.widget_text .widget-title, .widget_text .textwidget, .menu-about-navigation-container, .menu-article-navigation-container,  .widget_search, .menu-gallery-navigation-container, .widget_nav_menu, .menu-news-navigation-container, .menu-blog-navigation-container {
+	margin: 0;
+}
+
+/* Mobile menu hack so that the main button is not clickable */
+
+.main-small-navigation .menu-item-182 a {
+	pointer-events: none;
+}
+
+.main-small-navigation .menu-container-gallery a {
+	pointer-events: all;
+}
+
+.main-small-navigation .menu-item-64 a {
+	pointer-events: none;
+}
+
+.main-small-navigation .sub-menu a {
+	pointer-events: all;
+}
+
+/* End mobile menu hack */
+
+.widget_nav_menu, .gform_widget {
+	border-bottom:none;
+}
+
+
+.site-content {
+	width:100%;
+	max-width:100%;
+}
+
+.site-content-project {
+	width:100%;
+	max-width:100%;
+}
+
+#secondary .widget-area {
+	display:none;
+}
+
+.affiliations-bar {
+	display:none;
+}
+
+.affiliations-list {
+	list-style: none;
+}
+
+.affiliations-list li {
+	display:list-item;
+	margin:.5em auto;
+	text-align:center;
+}
+
+.project-gallery li {
+	display:list-item;
+	margin: 9 auto;
+	text-align: center;
+}
+
+.overlay {
+	height:98%;
+}
+
+/* Hack to prevent hover on mobile devices */
+
+.container:hover .gallery-item-title {
+    display:none;
+}
+.container:hover .overlay {
+	display:none;
+}
+
+/*
+.gallery-item {
+	width:450px;
+	/*width:100%;
+		Width is set to 450	to fix issues with displaying
+		overlay on mobile view. Mobile view originally
+		did not display overlays bcaause there was no click action
+		Now there is a click action.
+	text-align: left;
+}
+/*
+.gallery-item {
+	width:100%;
+	text-align: center;
+}
+
+
+.gallery-item .container{
+	height:100%;
+	width:450px;
+}
+
+.gallery-item-title {
+	top: 40%;
+}
+*/
+
+
+.pod-page-projects .gallery-item .container {
+	height:100%;
+}
+
+
+/* .gallery-item a {
+	pointer-events:none;
+}
+*/
+
+.cta-container{
+	display:block;
+	position:relative;
+	top:0;
+}
+
+.cta-button {
+   border: none;
+   background: none;
+   opacity:1;
+   padding: 0px 30px;
+   text-shadow: #000 1px 1px 1px;
+   color: #002967;
+   font-size: 18px;
+   vertical-align: none;
+   display:block;
+}
+.cta-button:hover {
+	color:#fff;
+	border:none;
+	background:none;
+	padding: 0px 30px;
+}
+.cta-button:active {
+	border:none;
+	background:none;
+ 	color:#fff;
+ 	padding: 0px 30px;
+}
+.cta-link {
+	text-decoration: none;
+}
+
+.cta-text {
+
+}
+
+.home-header .cta-container {
+	top:8%;
+}
+
+
+
+.breadcrumbs {
+	display:block;
+	/*color:#747474;
+	text-transform:uppercase;
+	margin: 5px 2.5em;
+	font-size:80%;*/
+}
+/*
+.breadcrumbs a {
+	color:#747474;
+}*/
+
+.page-template-subgallery-page-php .entry-header {
+	display:none;
+}
+
+.project-header-mobile h1.entry-title{
+	padding: 0 0 10px 0;
+}
+
+
+.project-view-menu {
+	display:none;
+}
+
+.project-carousel {
+	display:none;
+}
+
+.hide-mobile {
+	visibility: hidden;
+	display: none;
+}
+
+.hide-desktop{
+	visibility: visible;
+	display: block;
+}
+.main-small-navigation {
+	width:100%;
+	background:#fff;
+	border-bottom: solid 1px #ccc;
+}
+
+.main-small-navigation .menu-main-navigation-container {
+	background: #f6f6f6;
+}
+
+.main-small-navigation .menu-toggle {
+	margin: 0.5em 1.5em;
+	text-transform:uppercase;
+	background-image: url('/wp-content/themes/feinmann/images/mobile-menu-button.png');
+	background-repeat: no-repeat;
+	background-position:right center;
+}
+
+.main-small-navigation ul.menu {
+	list-style-type: none;
+	margin-left: 0;
+}
+
+.main-small-navigation li {
+	background:#f6f6f6;
+	border-bottom: solid 1px #ccc;
+	background-image: url('/wp-content/uploads/2013/05/nav-arrow-right.png');
+	background-repeat: no-repeat;
+	background-position: right center;
+	margin: 0;
+	padding: 0.5em 0em .5em 2em;
+	font-weight:300;
+}
+
+.main-small-navigation #menu-item-64, .main-small-navigation #menu-item-182 {
+	background-image: url('/wp-content/uploads/2013/05/nav-arrow-down.png');
+}
+
+.main-small-navigation #menu-item-64:active, .main-small-navigation #menu-item-182:active {
+	background-position: right top;
+}
+
+.main-small-navigation a, .main-small-navigation a:visited, .sub-menu .column1 a, .sub-menu .column2 a:visited {
+	color: #999 !important;
+	text-decoration: none;
+	font-weight: 300 !important;
+	background:none !important;
+}
+
+
+.main-small-navigation a:hover{
+	font-family:'Lato';
+	font-weight: 300;
+	color: #444 !important;
+}
+
+a.current-menu-item, li.current-menu-item  {
+	font-family:'Lato';
+	font-weight:  400;
+	color: #333 !important;
+}
+
+
+.menu-toggle .toggled-on {
+	border-bottom: none;
+}
+
+.sub-menu {
+	display: none;
+	list-style: none;
+	margin:0;
+	padding:0;
+	width:100%;
+	background:#fff;
+	margin-bottom:-8px;
+	margin-top:8px;
+}
+
+.sub-menu li {
+	margin-left: -2em;
+	background:#fff;
+	border:none;
+	font-weight:300;
+	font-size:90%;
+	color:#999;
+	padding-bottom:0px;
+}
+
+.sub-menu li:last-child {
+	padding-bottom: 0.5em;
+}
+
+.sub-menu li:first-child {
+	border-top:solid 1px #ccc;
+}
+
+/* Fix for mobile menu displaying an errant arrow on some pages */
+
+.category-our-projects #menu-item-65 a, .our-projects #menu-item-65 a, .category-design-and-build #menu-item-65 a, .design-and-build #menu-item-65 a, .category-home-improvement #menu-item-65 a, .home-improvement #menu-item-65 a, .category-feinmann-team #menu-item-65 a, .feinmann-team #menu-item-65 a, .category-community #menu-item-65 a, .community #menu-item-65 a, .category-lifestyle #menu-item-65 a, .lifestyle #menu-item-65 a {
+	background: none;
+}
+
+.category-press #menu-item-66 a, .press #menu-item-66 a, .category-awards #menu-item-66 a, .awards #menu-item-66 a, .category-events #menu-item-66 a, .events #menu-item-66 a {
+	background: none;
+}
+
+/* Column fix for gallery nav in mobile view
+Can get this working. */
+
+.menu-container-gallery {
+	width:100%;
+	height:150px;
+	display:none;
+}
+
+.column1 {
+	float:left;
+	width:50%;
+
+}
+.column2 {
+	float:left;
+	width:50%;
+
+}
+
+.countainer:hover .overlay {
+	display: none;
+}
+
+.countainer:hover .gallery-item-title {
+	display: none;
+}
+
+/* Begin Gallery Navigation in small nav container */
+
+/* .main-small-navigation #menu-item-999 a {
+	display:none;
+} */
+
+.main-small-navigation #menu-item-999 .sub-menu {
+	position: relative;
+	top: 0em;
+	left: 0px;
+	border-top: none;
+	width:40%;
+	float:left;
+}
+
+.main-small-navigation li#menu-item-1000 + a {
+	display:none;
+}
+
+.main-small-navigation #menu-item-1000 .sub-menu {
+	position: relative;
+	top: 0px;
+	left: 55px;
+	padding-top: 0px;
+	width:40%;
+	float:left;
+}
+
+.main-small-navigation #menu-item-999 .sub-menu li:first-child, .main-small-navigation #menu-item-1000 .sub-menu li:first-child {
+	padding-top: none;
+	border-top: none;
+}
+
+#nav_menu-5 {
+	display: block;
+}
+
+#text-2 {
+	border-bottom:none;
+}
+
+.gform_wrapper .left_label .gfield_label {
+	width: 100% !important;
+}
+
+.gform_footer {
+	padding-left: 0 !important;
+}
+
+.remove-mobile {
+	display:none;
+}
+
+.footer-top-left, .footer-top-right {
+	width: 100%;
+	float: none;
+}
+
+.footer-top-right {
+	margin-top: 20px;
+	margin-left: 0;
+	padding-left: 0;
+	border-left: none;
+}
+
+}
+
+/* Gallery Media Queries -- Old responsive.
+Replaced with full width at 760px
+
+@media only screen
+and (min-width : 481px)
+and (max-width : 690px) {
+
+	.gallery-item {
+		width:46%;
+	}
+}
+
+*/
+
+@media only screen
+and (max-width : 680px) {
+	.gallery-item {
+	width: 44.5%;
+}
+
+.gallery-item .container {
+	height: 100%;
+}
+
+
+
+.overlay {
+	height:98%;
+}
+
+
+}
+
+
+@media only screen
+and (max-width : 480px) {
+
+
+.project-carousel {
+	display:none;
+}
+
+#secondary-project {
+	margin-top: 0;
+	margin-right: 0;
+	margin-left: 0;
+}
+
+aside {
+	padding: 0 2em;
+}
+
+.project-awards {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.pod-projects .entry-title {
+	padding: 0 2em;
+}
+
+.project-content h1.entry-title{
+	padding: 0 0 10px 0;
+}
+
+#spaces-menu-head-project, #styles-menu-head-project {
+	display:none;
+}
+
+/* Fixes for mobile view for the hover element
+	Pointer events were disabled earlier causing
+	issues when they were re-enabled
+*/
+
+.gallery-item {
+	width:100%;
+	text-align: left;
+}
+
+
+.gallery-item .container{
+	height:100%;
+	width:100%;
+}
+
+.overlay {
+	height: 98.5%;
+}
+
+}
+
+@media only screen
+and (max-width : 550px) {
+
+.cta-text {
+	font-size:22px;
+}
+.cta-button, .cta-button:hover {
+	padding: 0px 22px;
+}
+
+.cta-container {
+	top:5px;
+}
+
+.home-header .cta-container {
+	top:12%;
+}
+
+.home-header .cta-text {
+	font-size:26px;
+}
+.home-header .cta-button, .home-header .cta-button:hover {
+	padding: 0px 30px;
+}
+
+}
+
+@media only screen
+and (max-width : 480px) {
+
+.cta-text {
+	font-size:22px;
+}
+.cta-button, .cta-button:hover {
+	padding: 0px 22px;
+}
+
+.cta-container {
+	top:5px;
+}
+
+.home-header .cta-container {
+	top:12%;
+}
+
+.home-header .cta-text {
+	font-size:26px;
+}
+.home-header .cta-button, .home-header .cta-button:hover {
+	padding: 0px 30px;
+}
+
+/* Set 100% width on the mobile view for forms */
+
+.gform_wrapper .left_label input.medium, .gform_wrapper textarea.textarea {
+	width:100% !important;
+}
+
+.full-width-mobile {
+	display:block;
+	width:100%;
+	clear:both;
+	float:left;
+}
+
+/* $FooBox modification to remove caption on mobile */
+.fbx-caption, .fbx-entry-title { display: none !important; }
+
+}
+
+@media only screen
+and (max-width:415px) {
+
+.cta-text {
+	font-size:20px;
+}
+.cta-button, .cta-button:hover {
+	padding: 0px 22px;
+}
+
+.cta-container {
+	top:5px;
+}
+
+.home-header .cta-container {
+	top:12%;
+}
+
+.home-header .cta-text {
+	font-size:22px;
+}
+.home-header .cta-button, .home-header .cta-button:hover {
+	padding: 0px 30px;
+}
+
+}
+
+
+@media only screen
+and (max-width : 320px) {
+
+.cta-text {
+	font-size:16px;
+}
+.cta-button, .cta-button:hover {
+	padding: 0px 18px;
+	font-size: 15px;
+}
+
+.home-header .cta-container, .cta-container {
+	top:12%
+}
+
+.home-header .cta-text {
+	font-size:18px;
+}
+.home-header .cta-button, .home-header .cta-button:hover {
+	padding: 0px 30px;
+}
+
+}

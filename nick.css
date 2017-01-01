@@ -1,0 +1,119 @@
+/* 
+Any styles added to this file will be loaded after style.css, so they'll take precedence. */
+
+.team-member {
+	display: block;
+	padding-top: .7em;
+	min-height: 19em;
+}
+
+.team-image {
+	float: left;
+	padding-right: 1em;
+  padding-bottom: .5em;
+	width: 160;
+	height: 240;
+	border: 0em;
+	margin: 0em;
+}
+
+#sdrn_menu ul {
+	display: none;
+}
+
+@media only screen
+and (max-width : 767px) {
+
+.slidedeck-header {
+	height: 80px !important;
+}
+
+.sd2-ress-wrapper {
+	display: none;
+}
+
+.main-small-navigation {
+	display: none;
+}
+
+#sdrn_bar {
+	border-bottom: solid 1px #d6d6d6;
+}
+
+.call-to-action {
+	top: 0px !important;
+	height: 80px !important;
+}
+
+.site-title {
+	position: absolute;
+	z-index: 100000;
+}
+
+.site-header img {
+	height: 34px;
+	width: 34px;
+	position: fixed;
+	top: 4px;
+	left: 31px;
+}
+
+.admin-bar .site-header img { top: 32px; }
+
+.cta-text {
+	margin-left: 30px !important;
+}
+
+.cta-button {
+	padding-left: 31px;
+}
+
+#sdrn_bar .sdrn_ic span {
+	background: #002967;
+}
+
+#sdrn_bar .sdrn_ic {
+	float: right;
+}
+
+#sdrn_menu.top {
+	padding-bottom: 10px;
+	margin-left: 5px;
+}
+
+#sdrn_menu ul {
+	padding-left: 11px;
+	margin-left: 5px;
+	display: block;
+}
+
+#sdrn_menu.sdrn_levels ul li ul {
+	border-top: none;
+}
+
+#sdrn_menu.sdrn_levels ul li {
+	padding-left: 5px !important;
+}
+
+#sdrn_menu.sdrn_levels a.sdrn_parent_item {
+	margin-left: 20px !important;
+}
+
+#sdrn_menu ul li a, #sdrn_menu ul li a:hover, #sdrn_menu .sdrn_icon_par, #sdrn_menu.sdrn_levels ul li {
+	padding: 2px 14px 1px 5px;
+	margin: 0px;
+	background: none;
+}
+
+#sdrn_menu .sdrn_icon_par {
+	padding-left: 8px !important;
+	font-size: 15px;
+	padding-top: 4px;
+}
+
+#sdrn_menu.sdrn_levels ul li ul li.sdrn_parent_item_li .sdrn_icon_par {
+	margin-left: 0px;
+}
+
+
+}

@@ -1,0 +1,7 @@
+/* IE8 Stylesheet
+This is a Hack Stylesheet because Ie8 has issues with box sizing with the responsive layout, forcing the homepage to kill the sidebar */
+
+/* This is to fix the Close Project View Button on IE8 */
+.project-header .sidebar-button {
+	width:170px;
+}
